@@ -14,7 +14,7 @@
   border-radius: 20px;
   padding: 3%;
   text-align: center;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 1rem;
 }
@@ -82,7 +82,7 @@
 }
 
 @media (max-width: 600px) {
-  .drinks {
+  .card {
     width: 100%;
     flex-direction: column;
   }
