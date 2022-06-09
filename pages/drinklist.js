@@ -53,7 +53,7 @@ export default function DrinkList() {
     if(!state.posts) {
         return (
             <div className='py-24 text-center'>
-                <Link href='/'><strong>404 : Not Found</strong></Link>
+                <Link href='/'><a><strong>404 : Not Found</strong></a></Link>
             </div>
         )
     }

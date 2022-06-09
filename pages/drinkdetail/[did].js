@@ -29,8 +29,7 @@ export default function DrinkDetail() {
     if(!state.posts) {
         return (
             <div className='pt-100 text-center'>
-                <h2>No Data Found</h2>
-                <Link href='/'><strong>Go Back To Home</strong></Link>
+                <Link href='/'><a><strong>404 : Not Found</strong></a></Link>
             </div>
         )
     }
@@ -63,14 +62,20 @@ export default function DrinkDetail() {
             </Head>
 
             <NavbarList/>
-            <div className='px-24 py-16'>
+            <div className='px-24 py-5'>
                 { item &&
                     <div className='flex flex-row justify-center items-center gap-16'>
-                        <div className='w-1/3'>
-                            <Image src={`${item.strDrinkThumb}`} loader={() => item.strDrinkThumb} alt='Img Cocktail' width={500} height={500}/>
+                        <div className='w-1/2'>
+                            <h1 className='w-1/2 md:w-max mb-20 font-semibold text-3xl'>
+                                Haii Guys, <span className='text-lime-400'>{item.strDrink}</span> LOVER! LOOK WHAT WE HAVE.
+                            </h1>
+                            <Image src={`${item.strDrinkThumb}`} loader={() => item.strDrinkThumb} alt='Img Cocktail' width={450} height={450}/>
                         </div>
                         <div className='w-2/3 flex flex-col justify-center items-start gap-5'>
-                            <h2 className='font-bold text-3xl'>{item.strDrink}</h2>
+                            <h2 className='font-bold mt-20 text-3xl'>
+                                {item.strDrink} <hr className='w-100'/>
+                            </h2>
+                            <p>{item.strInstructions}</p>
                             <span><strong>Ingredients : </strong><br/><ul>{ingredients}</ul></span>
                             <p><strong>Glass : </strong><br/>{item.strGlass}</p>
                             <p><strong>Instructions : </strong><br/>{item.strInstructions}</p>
